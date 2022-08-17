@@ -1,0 +1,18 @@
+{
+  "name": "xkcd-scrapper",
+  "version": "1.0.0",
+  "description": "Proyecto scrapper para descargar comics de https://xkcd.com/",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Maximo Junior Apaza Chirhuana",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "fs-extra": "^10.1.0"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^9.0.13"
+  }
+}
