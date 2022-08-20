@@ -4,13 +4,14 @@
   "description": "Proyecto scrapper para descargar comics de https://xkcd.com/",
   "main": "index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "ts-node index.ts"
   },
   "author": "Maximo Junior Apaza Chirhuana",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.27.2",
-    "fs-extra": "^10.1.0"
+    "fs-extra": "^10.1.0",
+    "image-size": "^1.0.2"
   },
   "devDependencies": {
     "@types/fs-extra": "^9.0.13"
