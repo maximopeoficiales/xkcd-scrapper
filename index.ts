@@ -22,20 +22,24 @@ const MAX_ID_XKCD_COMICS = 2588;
 const endTime = time();
 
 (async () => {
+    const fileContent: any[] = [];
     for (let id = INITIAL_ID_XKCD_COMIC; id < MAX_ID_XKCD_COMICS; id++) {
         const url = `https://xkcd.com/${id}/info.0.json`;
         log("Obteniendo informacion de: ", url)
         const { data } = await axios.get<Comic>(url);
+        
         const { num, news, transcript, ...restData } = data;
         const { height, width } = await getImageSize(data.img)
         log(`Imagen con ${height}x${width}`)
         const comicStore = {
             id, height, width, ...restData
         };
+        fileContent.push(comicStore);
         const nameFile = `./comics/${id}.json`;
         await fs.writeJSON(nameFile, comicStore);
-        log(`Archivo: ${nameFile} escrito correctamente ✔ `);
-
+        log(`Archivo: ${nameFile} creado ✅`);
     }
+    await fs.writeJSON("./comics/index.json", fileContent);
+    log(`Archivo: index.json generado correctamente ✅`);
     endTime();
 })()
